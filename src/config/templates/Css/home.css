@@ -1,0 +1,121 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: url(../Img/50457-anime-neon.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+    font-family: 'Share Tech', sans-serif;
+    position: relative;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 3.8rem;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+
+ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 6px 20px;
+    font-weight: 500;
+    font-size: 1.7rem;
+    transition: all 0.3s ease 0s;
+}
+
+ul li:hover {
+    border-radius: 20px;
+    background-color: #ff4321;
+    color: #fff;
+}
+
+header {
+    position: absolute;
+    bottom: 30%;
+    padding: 0 50px;
+}
+
+header h1 {
+    font-size: 7rem;
+}
+
+header h2 {
+    font-size: 4rem;
+}
+
+header p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+header button {
+    padding: 0;
+    width: 140px;
+    outline: none;
+    border: 0;
+    height: 40px;
+    font-weight: 500;
+    background-color: #ff4321;
+    transition: whidth 0.5s;
+    cursor: pointer;
+    border-radius: 20px;
+    color: #fff;
+}
+
+header button img {
+    display: none;
+}
+
+header button:hover {
+    display: flex;
+    width: 160px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header button:hover {
+    width: 160px;
+}
+
+.container .emp {
+    position: absolute;
+    height: 600px;
+    width: 550px;
+    right: 7%;
+    bottom: 0;
+    z-index: 999;
+}
+
+.container .fondo-emp {
+    position: absolute;
+    height: 550px;
+    width: 700px;
+    right: 1%;
+    bottom: 0;
+}

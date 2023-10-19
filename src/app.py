@@ -1,24 +1,32 @@
-from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
-from flask import Flask, render_template, session, request, redirect, json,jsonify, redirect
-from config.db import app, db
-from models.Clientes import Clientes, ClienteSchema
+from flask import Flask, redirect,request,jsonify,json,session,render_template
+from config.bd import app, db
+from models.usuario import usuario, usuarioSchema
 
 
-clienteschema = ClienteSchema()
-clienteschemas = ClienteSchema(many=True) 
-
+usuario_Schema = usuarioSchema()
+usuarios_Schema = usuarioSchema(many=True)
 @app.route('/', methods=['GET'])
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
-@app.route('/ingresar', methods=['POST'])
 def ingresar():
-    usuario = request.form['usuario']
-    contraseña = request.form['contraseña']
-    cliente = db.session.query(Clientes.nombre).filter(Clientes.nombre == usuario, Clientes.contraseña == contraseña).all()
+    email = request.form['email']
+    clave = request.form['clave']
+    usuario = db.session.query(usuario.id).filter(usuario.nombre == email, usuario.clave == clave).all()
+    resultado = usuario_Schema.dump(usuario)
 
-    if len(cliente) > 0:
-        session['usuario'] = usuario
+    if len(resultado) > 0:
+        session['email'] = email
+        return redirect('/Home')
+    else:
+        return redirect('/')
+
+@app.route('/Home', methods=['GET'])
+def home():
+    if 'usuario' in session:
         return render_template('Home.html')
     else:
         return redirect('/')
+        
+if __name__ == "__main__":
+    app.run(debug=True)

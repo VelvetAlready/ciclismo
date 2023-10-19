@@ -1,29 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="es">
+
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="Css/login.css">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../templates/Css/index.css">
 </head>
-<body>
-    
-    <div class="login-box"  >
-        <img class="avatar" src="Img/2107080.jpg" alt="">
-        <h1>Login Here</h1>
-        <form action="/ingresar">
-            <label for="username">Usuario</label>
-            <input type="text" name="usuario" placeholder="Ingresar Usuario">
 
-            <label for="contraseña">Contraseña</label>
-            <input type="password" name="contraseña" placeholder="Ingresar Contraseña">
-
-            <input  type="submit" value="Log in"><a href ="Home.html">log in</a>>
-
-            <a href="">¿Ha perdido su contraseña?</a>
-            <a href="">¿No tienes una cuenta?</a>
-        </form>
-    </div>
-
-</body>
-</html>
+<form action="" method "POST" class="login-form">
+    <p class="login-text">
+        <div class="icon-container">
+            <div class="circle">
+              <i class="fas fa-lock"></i>
+            </div>
+          </div>
+    </p>
+    <input type="email" class="login-username" autofocus="true" required="true" placeholder="Username" name="email" />
+    <input type="password" class="login-password" required="true" placeholder="Password" name ="clave" />
+    <input type="submit" name="Login" value="Login" class="login-submit" />
+  </form>
+  <a href="#" class="login-forgot-pass">forgot password?</a>
+  <div class="underlay-photo"></div>
+  <div class="underlay-black"></div> </html>
+  {% endblock %}
